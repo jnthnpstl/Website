@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:wght@700&family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:wght@700&family=Kanit:ital,wght@0,300;1,300&family=Raleway&family=Staatliches&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,500;0,700;1,400&family=Caveat:wght@400;600&family=Inter:wght@500&family=Oswald:wght@300&display=swap');
@@ -7,12 +9,12 @@
 * { 
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Gentium Plus', serif;
     font-family: 'Raleway', sans-serif;
-    width: 100%;
 }
 
 /*
@@ -57,6 +59,7 @@ header .nav-list li {
 
 
 header .nav-list li:hover {
+    transform: scale(1.1,1.1);
     opacity: 0.3;
 }
 
@@ -72,7 +75,7 @@ header .nav-list li:hover {
     height: 600px;
 }
 
-.banner .banner-cover{
+.banner .banner-cover, .menu{
     height: 100%;
     background-image: linear-gradient(rgba(247, 242, 238, 0.6), rgba(255, 255, 255, 0.596)), url("https://images.unsplash.com/photo-1570626742839-59acd9822944?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
     background-size: cover;
@@ -150,6 +153,11 @@ header .nav-list li:hover {
     text-align: left;
 }
 
+.banner-cover-latest-book img{
+    height: 435px;
+    width: 380px;
+}
+
 
 /*
 ===============
@@ -221,12 +229,13 @@ article {
 
 .article-text-highlight {
     font-weight: 1000;
-    font-size: 20px;
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
 .article-text-p {
     padding: 0 3%;
+    text-align: justify;
 }
 
 .article-text-person-name {
@@ -346,7 +355,7 @@ article img{
 
 .footer-container {
     display: grid;
-    height: 400px;
+    height: 100%;
     grid-template-columns: repeat(2 ,1fr);
 }
 
@@ -373,6 +382,8 @@ article img{
     font-size: 15px;
     color: rgba(255, 255, 255, 0.418);
 }
+
+
 
 .links {
     
@@ -416,4 +427,308 @@ article img{
 
 .links li {
     list-style: none;
+}
+
+/*
+=====================
+MENU-HEADER
+====================
+*/
+
+
+/*
+=====================
+MEDIA QUERIES
+====================
+*/
+
+
+.menu {
+    display: none;
+}
+
+.fa-bars {
+  
+}
+
+.annoying-bars {
+    display: none;
+}
+
+
+
+
+
+@media only screen and (max-width: 1024px) {
+
+    
+    .menu {
+        overflow: hidden;
+        transition: all .3s ease-in-out;
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        background: white;
+        display: block;
+        width: 0;
+    }
+
+    .menu-toggle {
+        width: 50%;
+        display: block;
+    }
+
+    
+
+    .menu-tabs {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        
+    }
+
+    .menu-tabs .header-navigation{
+        text-align: left;
+        padding: 30px 10px;
+        transition: none;
+  
+    }
+
+
+    .header-navigation-toggle{
+   
+        border: 1px solid black;
+    }
+
+    .header-navigation li {
+        text-align: left;
+        list-style: none;
+        padding: 20px 0;
+        border-bottom: 1px solid black;
+    }
+
+    .annoying-bars {
+        display: block;
+        position: absolute;
+        right: 10px;
+        z-index: 6;
+        margin-top: 20px;
+    }
+    
+    .fa-bars {
+        transition: all .3s ease-in-out;
+        transform: rotate(0deg);
+        padding: 10px;
+    }
+    
+    .fa-bars-toggle {
+        transform: rotate(90deg);
+    }
+
+
+
+
+
+
+    
+    .header{
+        display: none;
+        
+    }
+
+
+
+    .banner-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-cover-text-p .small-text, .button-pre-order{
+        float: none;
+    }
+
+    .banner-cover-text-p {
+        max-block-size: 300px;
+        position: absolute;
+        top: 2%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .banner-cover-latest-book {
+        grid-row: 1 / 2;
+        text-align: center;
+        padding: 0%;
+    }
+
+    .banner-cover-text{
+        text-align: center;
+    }
+
+    .banner-cover-latest-book img{
+        height: 300px;
+        width: 250px;
+        margin-top: 30px;
+        margin-left: 40px;
+    }
+
+
+
+
+
+
+    
+
+    .reviews-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    article {
+        display: block;
+    }
+    
+    .article-person{ 
+        text-align: center;
+    }
+    
+    .article-text {
+        text-align: center;
+    }
+
+    .one {
+        grid-column: 1 / 2 ;
+    }
+
+
+
+
+
+
+
+
+    .books-container {
+        grid-template-columns: none;
+        grid-template-rows: repeat(4, 1fr);
+        width: 100%;
+        padding: 0%;
+    }
+
+    .book-intro {
+        text-align: center;
+        margin: 130px 40px 100px 40px;
+        font-size: 40px;
+    }
+    
+    .book-img img{
+        height: 300px;
+        width: 250px;
+        padding-left: 30px;
+        grid-row: 1 / 2;
+    }
+
+    .book {
+        text-align: center;
+    }
+
+    .book-two {
+        grid-row: 3/5;
+        grid-column: 1/2;
+    }
+
+    .book-button {
+        width: 100px;
+        height: 50px;
+        margin-bottom: 50px;
+    }
+
+    .book-button span {
+    
+        font-size: 14px;
+    }
+
+
+
+
+
+
+
+    .img-section-text p {
+        padding-left: 5%;
+        color: white;
+        font-weight: 500;
+        font-size: 40px;
+        font-family: 'Roboto Mono', monospace;
+        line-height: 3rem;
+    }
+
+
+   
+
+
+
+
+    .footer-container {
+        display: grid;
+        height: 100%;
+        grid-template-columns: 65% 35%;
+    }
+    
+
+    .text {
+        padding: 8% 6%;
+        text-align: justify;
+    }
+    .text .text-name {
+        margin-bottom: 25px;
+    }
+    
+
+    .text .text-paragraph {
+        line-height: 15px;
+        font-size: 10px;
+    }
+
+    .links-container {
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+
+    .links-container li{ 
+        margin: 15px;
+        font-size: 10px;
+    }
+
+    .links-ideas, .links-book, .links-social {
+        font-size: 8px;
+        margin: 30px 0;
+        padding: 0;
+    }
+    
+  }
+
+@media only screen and (max-width: 376px) {
+    .book-text .title {
+        margin: 20px 0;
+        font-size: 35px;
+    }
+
+    .book-text {
+        text-indent: 40px;
+        line-height: 30px;
+    }
+    
+}
+
+@media only screen and (max-width: 321px) {
+    .book-text .title {
+        margin: 16px 0;
+        font-size: 27px;
+    }
+
+    .book-intro {
+        text-align: center;
+        margin: 130px 40px 100px 40px;
+        font-size: 32px;
+    }
 }

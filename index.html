@@ -6,8 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Author Sample Page</title>
     <link a href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+
+    <div class="annoying-bars">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+
+    <div class="menu">
+        <div class="menu-tabs">
+            <div class="header-navigation">
+                <ul class="nav-list">
+                    <li>Home</li>
+                    <li>Blogs</li>
+                    <li>Books</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+    
+    </div>
+
 
     <header class="header">
         <div class="header-page-name">
@@ -15,9 +35,9 @@
                 The
                 <span>Author</span>
             </p>
-                
+            
         </div>
-
+        
         <div class="header-navigation">
             <ul class="nav-list">
                 <li>Home</li>
@@ -29,6 +49,8 @@
     </header> 
 
     <section class="banner">
+      
+    </div>
         <div class="banner-cover">
             <div class="banner-grid">
                 <div class="banner-cover-text">
@@ -42,8 +64,7 @@
                 </div>
     
                 <div class="banner-cover-latest-book">
-                    <img src="../Web-1/img/SeekPng.com_books-png_161100.png" alt="Free Psd Book Cover Template - Book Cover Template Png@seekpng.com"
-                        height="435px" width="380px">
+                    <img src="../Web-1/img/SeekPng.com_books-png_161100.png" alt="Free Psd Book Cover Template - Book Cover Template Png@seekpng.com">
                 </div>
             </div>
         </div>
@@ -197,6 +218,20 @@
             </div>
         </div>
     </section>
+
+    <script>
+        var bars = document.querySelector('.fa');
+
+        function openMenu() {
+            var menu = document.querySelector('.menu');
+        
+            var bar = document.querySelector('.fa-bars');
+            menu.classList.toggle('menu-toggle');
+            bar.classList.toggle('fa-bars-toggle');
+        }
+
+        bars.addEventListener('click', openMenu)
+    </script>
     
 </body>
 </html>
