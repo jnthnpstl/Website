@@ -232,6 +232,7 @@
         var bool = true;
         const body = document.querySelector('body');
         const banner = document.querySelector('.banner');
+        const books = document.querySelector('.books');
 
         
         function openMenu() {
@@ -239,6 +240,7 @@
             menu.classList.toggle('menu-toggle');
             bars.classList.toggle('fa-bars-toggle');
             banner.classList.toggle('banner-toggle');
+            books.classList.toggle('banner-toggle');
             
         }
 
@@ -247,8 +249,9 @@
             if (bool === true) {
                 menu.classList.remove('menu-toggle');
                 bars.classList.remove('fa-bars-toggle');
-                body.classList.remove('body-toggle'); 
+                body.classList.remove('body-toggle');
                 banner.classList.remove('banner-toggle');
+                books.classList.remove('banner-toggle');
             }
         }
 
